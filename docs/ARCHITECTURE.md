@@ -1,36 +1,47 @@
-# MythOS Architecture
+# MythOS Canonical Architecture
 
-## Canonical layers
+## Root
 
-### 1. Core Kernel
-Owns identity, rails, events, state transitions, and shared contracts.
+MythOS is organized by system meaning, not by framework. The repository hierarchy is canonical and must not be replaced by a generic application/monorepo layout.
 
-### 2. Archive
-Owns durable knowledge and provenance under the `Archive://` namespace.
+## Core
 
-### 3. Codex
-Owns structured operating knowledge, protocols, and semantic definitions that can be consumed by the runtime.
+`Core/` contains the executable foundation:
 
-### 4. Modules
-Own independent capabilities such as interfaces, synchronization, experimental devices, and integrations.
+- `Kernel/` — central kernel and rail lifecycle.
+- `State/` — runtime state models.
+- `Events/` — event contracts and creation.
+- `Intent/` — intent representation and resolution.
+- `Registry/` — entity/module/protocol registration.
+- `Runtime/` — execution context.
 
-### 5. Applications
-Provide concrete user-facing shells. The current mobile application lineage is `MythOS-HackTheWorld`; it is an application source, not the canonical system root.
+## Knowledge and identity surfaces
 
-## Migration rule
+- `Codex/` — canonical semantic and operating knowledge.
+- `EchoS/` — EchoS system surface.
 
-Material from `IDevSU-source/MythOS-HackTheWorld` is treated as an upstream application lineage. Promote reusable architecture and content into this repository deliberately; do not copy the entire application tree into the kernel.
+## Archive://
 
-The prior application established terminal-style onboarding, a dashboard, chapter map/reader, checkpoints, lexicon, devlogs, profile, XP, badges, streaks, and mobile UI conventions. These become migration targets for the canonical application layer.
+`Archive/` is the durable project archive and uses the exact canonical roots:
 
-## Rail model
+`Codex/`, `CoreKernel/`, `EchoS/`, `Pleroma/`, `Aeons/`, `AeonAwakening/`, `OriginFlame/`, `TemporalRunes/`, `JournalEntries/`, `Protocols/`, `Research/`, and `ProjectHistory/`.
 
-A Rail is a named progression stage. Rail identifiers are stable and human-readable. A Rail may contain multiple phases and events.
+## Systems
 
-The first canonical rail is:
+`Systems/` contains major subsystems: `MythoDex`, `DevTex`, `QuantumSync`, `SovereignMesh`, and `MythChain`.
 
-`Rail.001 — Canonicalization`
+## Interfaces
 
-## Design constraint
+`Interfaces/` contains `MythOS_UI`, `Temple`, `HUD`, and `Terminal`.
 
-MythOS should be able to evolve from a mobile application into a broader operating environment without coupling the kernel to Expo, React Native, Android, or any single UI runtime.
+## Artifacts
+
+`Artifacts/` contains `Klystromagnet` and `Echo-0`.
+
+## Extension boundaries
+
+`Modules/` contains independent capabilities. `Protocols/` contains cross-system contracts. `docs/`, `scripts/`, `tests/`, and `tools/` contain engineering support.
+
+## Architectural rule
+
+Applications, mobile frameworks, and external repositories are implementation sources. They do not define the MythOS root hierarchy. Reusable material may be promoted into the canonical tree deliberately and with provenance recorded in `Archive/ProjectHistory/`.
