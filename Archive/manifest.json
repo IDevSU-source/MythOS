@@ -1,0 +1,19 @@
+{
+  "namespace": "Archive://",
+  "version": "1.0.0",
+  "canonical": true,
+  "roots": [
+    "Codex",
+    "CoreKernel",
+    "EchoS",
+    "Pleroma",
+    "Aeons",
+    "AeonAwakening",
+    "OriginFlame",
+    "TemporalRunes",
+    "JournalEntries",
+    "Protocols",
+    "Research",
+    "ProjectHistory"
+  ]
+}
