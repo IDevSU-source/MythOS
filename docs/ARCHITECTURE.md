@@ -21,7 +21,7 @@ Provide concrete user-facing shells. The current mobile application lineage is `
 
 Material from `IDevSU-source/MythOS-HackTheWorld` is treated as an upstream application lineage. Promote reusable architecture and content into this repository deliberately; do not copy the entire application tree into the kernel.
 
-The prior application already established terminal-style onboarding, dashboard, chapter map/reader, checkpoint, lexicon, devlog, profile, XP, badges, streaks, and mobile UI conventions. cite-placeholder
+The prior application established terminal-style onboarding, a dashboard, chapter map/reader, checkpoints, lexicon, devlogs, profile, XP, badges, streaks, and mobile UI conventions. These become migration targets for the canonical application layer.
 
 ## Rail model
 
